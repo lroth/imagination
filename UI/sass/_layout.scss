@@ -1,0 +1,34 @@
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#body {
+    @include bg-full('../images/background.jpg');
+}
+
+// .stars {
+//     @include bg-full('../images/stars.png');
+// }
+
+// #stars {
+//     z-index:0;
+//     background:-moz-linear-gradient(top, #040429, #257eb7);
+//     background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#040429), color-stop(100%,#257eb7));
+// }

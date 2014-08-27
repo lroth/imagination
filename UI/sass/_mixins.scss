@@ -1,0 +1,7 @@
+
+@mixin bg-full($url) {
+    background-image: url($url);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+}
