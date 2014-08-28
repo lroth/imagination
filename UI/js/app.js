@@ -23,6 +23,10 @@ var App = (function ($, undefined) {
         TweenLite.to(objects.eyeRight, 1, {rotation:"+=20", transformOrigin: '70px 66px'});
         TweenLite.to(objects.eyeRight, 1, {rotation:"-=20", transformOrigin: '70px 66px', delay:1, onComplete:eyeRightWiggle});
     }
+
+    function eyeLeftWiggle() {
+        TweenLite.to(objects.eyeLeft, 3, {rotation:"+=10", transformOrigin: '64px 59px'});
+        TweenLite.to(objects.eyeLeft, 3, {rotation:"-=10", transformOrigin: '64px 59px', delay:2, onComplete:eyeLeftWiggle});
     }
 
     function earsWiggle() {
@@ -49,6 +53,7 @@ var App = (function ($, undefined) {
     function animate() {
         eyeballRightRotate();
         eyeRightWiggle();
+        eyeLeftWiggle();
         headWiggle();
         hairWiggle();
         earsWiggle();
