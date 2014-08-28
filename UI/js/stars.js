@@ -3,6 +3,7 @@
 App.stars = (function ($, undefined) {
 
     var options = {
+        container: null,
         width: null,
         height: null,
         canvas: null,
@@ -69,24 +70,34 @@ App.stars = (function ($, undefined) {
         this.getY = function() { return this.y; }
     }
 
-    function animloop(){
-      requestAnimationFrame(animloop);
+    function fill() {
+        for(var i = 0; i < 400; i++) {
+            options.pxs[i] = new Circle();
+            options.pxs[i].reset();
+        }
+    }
+
+    function animate() {
+      requestAnimationFrame(animate);
       draw();
+    }
+
+    function resize() {
+         $(options.container).attr('width', options.width).attr('height',options.height);
+         $(options.canvas).attr('width', options.width).attr('height',options.height);
     }
 
     return {
         init: function() {
             options.width = window.innerWidth;
             options.height = window.innerHeight;
-            $('#container').width(options.width).height(options.height);
+            options.container = document.getElementById('container');
             options.canvas = document.getElementById('stars');
-            $(options.canvas).attr('width', options.width).attr('height',options.height);
             options.con = options.canvas.getContext('2d');
-            for(var i = 0; i < 400; i++) {
-                options.pxs[i] = new Circle();
-                options.pxs[i].reset();
-            }
-            animloop();
+            resize();
+            fill();
+            animate();
+            window.addEventListener('resize', resize, false);
         }
     };
 })(jQuery);
