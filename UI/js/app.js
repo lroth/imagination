@@ -57,9 +57,6 @@ var App = (function ($, undefined) {
         headWiggle();
         hairWiggle();
         earsWiggle();
-
-        // TweenMax.to($('#eyeball-right') , 2, {rotation:360, transformOrigin:"70px 66px", repeat:true, repeatDelay:0, ease:Linear.easeNone});
-
     }
 
     return {
