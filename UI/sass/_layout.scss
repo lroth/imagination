@@ -20,26 +20,5 @@ body {
 
 #body {
     @include bg-full('../images/background.jpg');
+    background-image: url('../images/background-big.jpg');
 }
-
-#torso {
-    position: absolute;
-    width: 606px;
-    height: 329px;
-    z-index: 2;
-    background-image: url('../images/torso.png');
-    background-repeat: no-repeat;
-    background-position: top center;
-    bottom: 0;
-    @include horizontal-middle();
-}
-
-// .stars {
-//     @include bg-full('../images/stars.png');
-// }
-
-// #stars {
-//     z-index:0;
-//     background:-moz-linear-gradient(top, #040429, #257eb7);
-//     background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#040429), color-stop(100%,#257eb7));
-// }

@@ -1,0 +1,12 @@
+
+#torso {
+    @include bg-full('../images/torso.png');
+    @include transform-origin(50%, 100%);
+    position: absolute;
+    left: 50%;
+    margin-left: -303px;
+    width: 606px;
+    height: 329px;
+    z-index: 2;
+    bottom: 0;
+}

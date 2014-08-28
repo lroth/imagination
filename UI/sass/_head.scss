@@ -1,0 +1,119 @@
+
+#head {
+    left: 50%;
+    margin-left: -325px;
+    width: 560px;
+    height: 800px;
+    position: absolute;
+    z-index: 3;
+}
+
+#hair {
+    width: 540px;
+    height: 410px;
+    background-image: url('../images/hair.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 4;
+    margin-top: 4px;
+    margin-left: 14px;
+}
+
+#top-teeth {
+    width: 227px;
+    height: 269px;
+    background-image: url('../images/top-teeth.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 5;
+    margin-top: 73px;
+    margin-left: 243px;
+}
+
+#ears {
+    width: 534px;
+    height: 225px;
+    background-image: url('../images/ears.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 6;
+    margin-top: 328px;
+    margin-left: 1px;
+}
+
+#main-face {
+    width: 366px;
+    height: 534px;
+    background-image: url('../images/main-face.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 7;
+    margin-top: 265px;
+    margin-left: 133px;
+}
+
+#side-teeth {
+    width: 111px;
+    height: 261px;
+    background-image: url('../images/side-teeth.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 8;
+    margin-top: 489px;
+    margin-left: 412px;
+}
+
+#eye-left {
+    position: absolute;
+    z-index: 9;
+    margin-left: 176px;
+    margin-top: 264px;
+
+    #eyebrow-left {
+        width: 194px;
+        height: 140px;
+        background-image: url('../images/eyebrow-left.png');
+        background-repeat: no-repeat;
+        position: absolute;
+        z-index: 11;
+        margin-top: -86px;
+        margin-left: -56px;
+    }
+
+    #eyeball-left {
+        width: 122px;
+        height: 125px;
+        background-image: url('../images/eyeball-left.png');
+        background-repeat: no-repeat;
+        position: absolute;
+        z-index: 10;
+    }
+}
+
+#eye-right {
+    position: absolute;
+    z-index: 9;
+    margin-left: 345px;
+    margin-top: 205px;
+
+    #eyebrow-right {
+        width: 100px;
+        height: 143px;
+        background-image: url('../images/eyebrow-right.png');
+        background-repeat: no-repeat;
+        position: absolute;
+        z-index: 11;
+        margin-top: -79px;
+        margin-left: 45px;
+    }
+
+    #eyeball-right {
+        width: 137px;
+        height: 140px;
+        background-image: url('../images/eyeball-right.png');
+        background-repeat: no-repeat;
+        position: absolute;
+        z-index: 10;
+    }
+}
+
