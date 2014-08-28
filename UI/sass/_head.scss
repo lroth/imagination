@@ -52,6 +52,36 @@
     margin-left: 133px;
 }
 
+#clock {
+    position: absolute;
+    z-index: 13;
+    width: 500px;
+    height: 500px;
+    margin-top: 275px;
+    margin-left: 70px;
+    border: none;
+    .clock-face-container:after,
+    .clock-face-second {
+        display: none;
+    }
+    .clock-face-hour {
+        border-radius: 0;
+        margin: -57px 0 -57px -246px;
+        padding: 57px 0 57px 246px;
+        background-color: transparent;
+        background-image: url('../images/hours.png');
+        background-repeat: no-repeat;
+    }
+    .clock-face-minute {
+        border-radius: 0;
+        margin: -332px -88px 0;
+        padding: 332px 88px 0;
+        background-color: transparent;
+        background-image: url('../images/minutes.png');
+        background-repeat: no-repeat;
+    }
+}
+
 #side-teeth {
     width: 111px;
     height: 261px;

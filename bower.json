@@ -3,6 +3,7 @@
     "version": "0.1.0",
     "dependencies": {
         "jquery": "~1.11.1",
-        "gsap": "~1.13.2"
+        "gsap": "~1.13.2",
+        "clock-face": "~0.1.1"
     }
 }
