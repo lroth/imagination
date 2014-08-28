@@ -15,13 +15,14 @@ var App = (function ($, undefined) {
       return Math.floor(Math.random() * (max - min)) + min;
     }
 
-    function rotateEyeballRight() {
-        TweenLite.to(objects.eyeballRight, 1, {rotation:"+=360", transformOrigin: '70px 66px', onComplete:rotateEyeballRight});
+    function eyeballRightRotate() {
+        TweenLite.to(objects.eyeballRight, 1, {rotation:"+=360", transformOrigin: '70px 66px', onComplete:eyeballRightRotate});
     }
 
-    function rotateEyeRight() {
+    function eyeRightWiggle() {
         TweenLite.to(objects.eyeRight, 1, {rotation:"+=20", transformOrigin: '70px 66px'});
-        TweenLite.to(objects.eyeRight, 1, {rotation:"-=20", transformOrigin: '70px 66px', delay:1, onComplete:rotateEyeRight});
+        TweenLite.to(objects.eyeRight, 1, {rotation:"-=20", transformOrigin: '70px 66px', delay:1, onComplete:eyeRightWiggle});
+    }
     }
 
     function earsWiggle() {
@@ -46,9 +47,8 @@ var App = (function ($, undefined) {
     }
 
     function animate() {
-
-        rotateEyeballRight();
-        rotateEyeRight();
+        eyeballRightRotate();
+        eyeRightWiggle();
         headWiggle();
         hairWiggle();
         earsWiggle();
