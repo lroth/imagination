@@ -38,8 +38,9 @@ var App = (function ($, undefined) {
         var range = getRandomInt(1, 5);
         var speed = getRandomInt(1, 3);
         var delay = getRandomInt(1, 3);
-        TweenLite.to(objects.head, speed, {rotation:'+=' + range, transformOrigin: '350px 730px'});
-        TweenLite.to(objects.head, speed, {rotation:'-=' + range, transformOrigin: '350px 730px', delay:delay , onComplete:headWiggle});
+        var bounce = getRandomInt(2, 10);
+        TweenLite.to(objects.head, speed, {rotation:'+=' + range, marginTop:'-=' + bounce + 'px', transformOrigin: '350px 730px'});
+        TweenLite.to(objects.head, speed, {rotation:'-=' + range, marginTop:'+=' + bounce + 'px', transformOrigin: '350px 730px', delay:delay , onComplete:headWiggle});
     }
 
     function hairWiggle() {
