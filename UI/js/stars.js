@@ -95,9 +95,9 @@ App.stars = (function ($, undefined) {
             options.canvas = document.getElementById('stars');
             options.con = options.canvas.getContext('2d');
             resize();
+            window.addEventListener('resize', resize, false);
             fill();
             animate();
-            window.addEventListener('resize', resize, false);
         }
     };
 })(jQuery);
