@@ -2,13 +2,17 @@
 var App = (function ($, undefined) {
 
     var objects = {
+        dude: $('#dude'),
+        stars: $('#stars'),
+        headWrapper: $('#head-wrapper'),
         head: $('#head'),
         hair: $('#hair'),
         eyeLeft: $('#eye-left'),
         eyeRight: $('#eye-right'),
         eyeballLeft: $('#eyeball-left'),
         eyeballRight: $('#eyeball-right'),
-        ears: $('#ears')
+        ears: $('#ears'),
+        torso: $('#torso')
     };
 
     function getRandomInt(min, max) {
@@ -51,6 +55,14 @@ var App = (function ($, undefined) {
         TweenLite.to(objects.hair, speed, {rotation:'-=' + range, transformOrigin: '283px 242px', delay:delay , onComplete:hairWiggle});
     }
 
+    function resize() {
+        var windowHeight = $(window).height();
+        var dudeHeight = objects.head.height() + objects.torso.height();
+        var scale = windowHeight / dudeHeight;
+        objects.headWrapper.css({transform: 'scale('+scale+')'});
+        objects.torso.css({transform: 'scale('+scale+')'});
+    }
+
     function animate() {
         eyeballRightRotate();
         eyeRightWiggle();
@@ -64,6 +76,10 @@ var App = (function ($, undefined) {
         //main method to initiate template pages
         init: function () {
             this.stars.init();
+
+            resize();
+            window.addEventListener('resize', resize, false);
+
             animate();
         },
     };

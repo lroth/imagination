@@ -12,13 +12,19 @@ body {
     z-index: 0;
 }
 
+#body {
+    @include bg-full('../images/background.jpg');
+    background-image: url('../images/background-big.jpg');
+}
+
 #stars {
     @include absfull();
     @include fullsize();
     z-index: 1;
 }
 
-#body {
-    @include bg-full('../images/background.jpg');
-    background-image: url('../images/background-big.jpg');
+#dude {
+    @include absfull();
+    @include fullsize();
+    z-index: 2;
 }

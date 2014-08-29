@@ -1,4 +1,9 @@
 
+#head-wrapper {
+    @include transform-origin(50%, 0%);
+    margin-top: 15px;
+}
+
 #head {
     left: 50%;
     margin-left: -325px;
