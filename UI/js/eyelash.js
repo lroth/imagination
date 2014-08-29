@@ -19,9 +19,7 @@ App.eyelash = (function ($, undefined) {
         brp: {x: 117, y: null}
     };
 
-    function draw() {
-        options.con.clearRect(0, 0, options.width, options.height);
-
+    function calculate() {
         if (options.currentY >= options.closedY) {
             options.mode = 'open';
         } else if (options.currentY <= options.openY) {
@@ -33,6 +31,12 @@ App.eyelash = (function ($, undefined) {
         } else if ('close' === options.mode) {
             options.currentY += options.step;
         }
+    }
+
+    function draw() {
+        options.con.clearRect(0, 0, options.width, options.height);
+
+
 
         options.blp.y = options.currentY;
         options.brp.y = options.currentY;
@@ -53,8 +57,17 @@ App.eyelash = (function ($, undefined) {
     }
 
     function animate() {
-      requestAnimationFrame(animate);
-      draw();
+
+      var tl = new TimelineLite({onComplete:animate});
+
+      tl.add(TweenLite.to(options, 3, {currentY:options.closedY, delay:1, onUpdate:draw}));
+      tl.add(TweenLite.to(options, 3, {currentY:options.openY, delay:1, onUpdate:draw}));
+
+      tl.play();
+
+      // requestAnimationFrame(animate);
+      // calculate();
+      // draw();
     }
 
     return {
