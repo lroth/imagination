@@ -25,8 +25,8 @@ var App = (function ($, undefined) {
     }
 
     function topTeethMovement() {
-        TweenLite.to(objects.topTeeth, 1, {marginTop:"+=5"});
-        TweenLite.to(objects.topTeeth, 1, {marginTop:"-=5", delay:3, onComplete:topTeethMovement});
+        TweenLite.to(objects.topTeeth, 1, {marginTop:'+=5'});
+        TweenLite.to(objects.topTeeth, 1, {marginTop:'-=5', delay:3, onComplete:topTeethMovement});
     }
 
     function teethSparkle(teeth) {
@@ -59,27 +59,27 @@ var App = (function ($, undefined) {
     }
 
     function sideTeethMovement() {
-        TweenLite.to(objects.sideTeeth, 1, {marginLeft:"+=5"});
-        TweenLite.to(objects.sideTeeth, 1, {marginLeft:"-=5", delay:2, onComplete:sideTeethMovement});
+        TweenLite.to(objects.sideTeeth, 1, {marginLeft:'+=5'});
+        TweenLite.to(objects.sideTeeth, 1, {marginLeft:'-=5', delay:2, onComplete:sideTeethMovement});
     }
 
     function eyeballRightRotate() {
-        TweenLite.to(objects.eyeballRight, 1, {rotation:"+=360", transformOrigin: '70px 66px', onComplete:eyeballRightRotate});
+        TweenLite.to(objects.eyeballRight, 1, {rotation:'+=360', transformOrigin: '70px 66px', onComplete:eyeballRightRotate});
     }
 
     function eyeRightWiggle() {
-        TweenLite.to(objects.eyeRight, 1, {rotation:"+=20", transformOrigin: '70px 66px'});
-        TweenLite.to(objects.eyeRight, 1, {rotation:"-=20", transformOrigin: '70px 66px', delay:1, onComplete:eyeRightWiggle});
+        TweenLite.to(objects.eyeRight, 1, {rotation:'+=20', transformOrigin: '70px 66px'});
+        TweenLite.to(objects.eyeRight, 1, {rotation:'-=20', transformOrigin: '70px 66px', delay:1, onComplete:eyeRightWiggle});
     }
 
     function eyeLeftWiggle() {
-        TweenLite.to(objects.eyeLeft, 3, {rotation:"+=10", transformOrigin: '64px 59px'});
-        TweenLite.to(objects.eyeLeft, 3, {rotation:"-=10", transformOrigin: '64px 59px', delay:2, onComplete:eyeLeftWiggle});
+        TweenLite.to(objects.eyeLeft, 3, {rotation:'+=10', transformOrigin: '64px 59px'});
+        TweenLite.to(objects.eyeLeft, 3, {rotation:'-=10', transformOrigin: '64px 59px', delay:2, onComplete:eyeLeftWiggle});
     }
 
     function earsWiggle() {
-        TweenLite.to(objects.ears, 0.5, {rotation:"+=3", transformOrigin: '305px 96px'});
-        TweenLite.to(objects.ears, 0.5, {rotation:"-=3", transformOrigin: '305px 96px', delay:3, onComplete:earsWiggle});
+        TweenLite.to(objects.ears, 0.5, {rotation:'+=3', transformOrigin: '305px 96px'});
+        TweenLite.to(objects.ears, 0.5, {rotation:'-=3', transformOrigin: '305px 96px', delay:3, onComplete:earsWiggle});
     }
 
     function headWiggle() {
