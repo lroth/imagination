@@ -8,6 +8,7 @@ var App = (function ($, undefined) {
         head: $('#head'),
         hair: $('#hair'),
         eyeLeft: $('#eye-left'),
+        eyelashLeft: $('#eyelash-left'),
         eyeRight: $('#eye-right'),
         eyeballLeft: $('#eyeball-left'),
         eyeballRight: $('#eyeball-right'),
@@ -80,6 +81,7 @@ var App = (function ($, undefined) {
             resize();
             window.addEventListener('resize', resize, false);
 
+            this.eyelash.init();
             animate();
         },
     };
