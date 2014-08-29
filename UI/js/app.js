@@ -6,6 +6,7 @@ var App = (function ($, undefined) {
         stars: $('#stars'),
         headWrapper: $('#head-wrapper'),
         head: $('#head'),
+        topTeeth: $('#top-teeth'),
         hair: $('#hair'),
         eyeLeft: $('#eye-left'),
         eyelashLeft: $('#eyelash-left'),
@@ -13,11 +14,22 @@ var App = (function ($, undefined) {
         eyeballLeft: $('#eyeball-left'),
         eyeballRight: $('#eyeball-right'),
         ears: $('#ears'),
+        sideTeeth: $('#side-teeth'),
         torso: $('#torso')
     };
 
     function getRandomInt(min, max) {
         return Math.floor(Math.random() * (max - min)) + min;
+    }
+
+    function topTeethMovement() {
+        TweenLite.to(objects.topTeeth, 1, {marginTop:"+=5"});
+        TweenLite.to(objects.topTeeth, 1, {marginTop:"-=5", delay:3, onComplete:topTeethMovement});
+    }
+
+    function sideTeethMovement() {
+        TweenLite.to(objects.sideTeeth, 1, {marginLeft:"+=5"});
+        TweenLite.to(objects.sideTeeth, 1, {marginLeft:"-=5", delay:2, onComplete:sideTeethMovement});
     }
 
     function eyeballRightRotate() {
@@ -71,6 +83,8 @@ var App = (function ($, undefined) {
         headWiggle();
         hairWiggle();
         earsWiggle();
+        topTeethMovement();
+        sideTeethMovement();
     }
 
     return {
