@@ -5,6 +5,7 @@
 }
 
 #head {
+    @include gpu();
     left: 50%;
     margin-left: -325px;
     width: 560px;
@@ -14,6 +15,7 @@
 }
 
 #hair {
+    @include gpu();
     width: 540px;
     height: 410px;
     background-image: url('../images/hair.png');
@@ -25,6 +27,7 @@
 }
 
 #top-teeth {
+    @include gpu();
     width: 227px;
     height: 269px;
     background-image: url('../images/top-teeth.png');
@@ -40,6 +43,7 @@
 }
 
 #ears {
+    @include gpu();
     width: 534px;
     height: 225px;
     background-image: url('../images/ears.png');
@@ -51,6 +55,7 @@
 }
 
 #main-face {
+    @include gpu();
     width: 366px;
     height: 534px;
     background-image: url('../images/main-face.png');
@@ -92,6 +97,7 @@
 }
 
 #side-teeth {
+    @include gpu();
     width: 111px;
     height: 261px;
     background-image: url('../images/side-teeth.png');
@@ -107,6 +113,7 @@
 }
 
 #eye-left {
+    @include gpu();
     position: absolute;
     z-index: 9;
     margin-left: 176px;
@@ -141,6 +148,7 @@
 }
 
 #eye-right {
+    @include gpu();
     position: absolute;
     z-index: 9;
     margin-left: 345px;
