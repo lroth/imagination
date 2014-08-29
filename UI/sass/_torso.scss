@@ -1,5 +1,6 @@
 
 #torso {
+    @include gpu();
     @include bg-full('../images/torso.png');
     @include transform-origin(50%, 100%);
     position: absolute;
