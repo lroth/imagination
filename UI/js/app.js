@@ -7,6 +7,7 @@ var App = (function ($, undefined) {
         headWrapper: $('#head-wrapper'),
         head: $('#head'),
         topTeeth: $('#top-teeth'),
+        topTeethSparkle: $('#top-teeth-sparkle'),
         hair: $('#hair'),
         eyeLeft: $('#eye-left'),
         eyelashLeft: $('#eyelash-left'),
@@ -15,6 +16,7 @@ var App = (function ($, undefined) {
         eyeballRight: $('#eyeball-right'),
         ears: $('#ears'),
         sideTeeth: $('#side-teeth'),
+        sideTeethSparkle: $('#side-teeth-sparkle'),
         torso: $('#torso')
     };
 
@@ -25,6 +27,35 @@ var App = (function ($, undefined) {
     function topTeethMovement() {
         TweenLite.to(objects.topTeeth, 1, {marginTop:"+=5"});
         TweenLite.to(objects.topTeeth, 1, {marginTop:"-=5", delay:3, onComplete:topTeethMovement});
+    }
+
+    function teethSparkle(teeth) {
+
+        var delay = getRandomInt(5, 10);
+
+        var tl = new TimelineLite({onComplete:function(){
+            teethSparkle(teeth);
+        }, delay: delay});
+
+        tl.add(TweenLite.fromTo(
+            teeth, .5,
+            {css:{scale:0, opacity:0, rotation: 0}, ease: Linear.easeNone},
+            {css:{scale:.7, opacity:9, rotation: 180}, ease: Linear.easeNone}
+        ));
+
+        tl.add(TweenLite.to(
+            teeth, .5,
+            {css:{rotation: 360}, ease: Linear.easeNone}
+        ));
+
+        tl.add(TweenLite.to(
+            teeth, .5,
+            {css:{scale:0, opacity:0, rotation: 540}, ease: Linear.easeNone}
+        ));
+
+        tl.play();
+        // TweenLite.to(objects.topTeethSparkle, 1, {rotation:'+=360', scale: 0.5, delay:5});
+        // TweenLite.to(objects.topTeethSparkle, 1, {rotation:'-=360', scale: 0.1, onComplete:topTeethSparkle});
     }
 
     function sideTeethMovement() {
@@ -85,6 +116,8 @@ var App = (function ($, undefined) {
         earsWiggle();
         topTeethMovement();
         sideTeethMovement();
+        teethSparkle(objects.topTeethSparkle);
+        teethSparkle(objects.sideTeethSparkle);
     }
 
     return {
