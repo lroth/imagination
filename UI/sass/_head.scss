@@ -2,6 +2,9 @@
 #head-wrapper {
     @include transform-origin(50%, 0%);
     margin-top: 15px;
+    position: absolute;
+    left: 50%;
+    z-index: 100;
 }
 
 #head {
@@ -92,6 +95,7 @@
     }
     .clock-face-hour {
         @include gpu();
+        z-index: 15;
         border-radius: 0;
         margin: -57px 0 -57px -246px;
         padding: 57px 0 57px 246px;
@@ -101,6 +105,7 @@
     }
     .clock-face-minute {
         @include gpu();
+        z-index: 14;
         border-radius: 0;
         margin: -332px -88px 0;
         padding: 332px 88px 0;
