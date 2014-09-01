@@ -66,6 +66,18 @@
     margin-left: 133px;
 }
 
+#actual-mouth {
+    @include gpu();
+    width: 287px;
+    height: 175px;
+    background-image: url('../images/actual-mouth.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 8;
+    margin-top: 490px;
+    margin-left: 190px;
+}
+
 #clock {
     position: absolute;
     z-index: 13;

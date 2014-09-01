@@ -9,6 +9,7 @@ var App = (function ($, undefined) {
         topTeeth: $('#top-teeth'),
         topTeethSparkle: $('#top-teeth-sparkle'),
         hair: $('#hair'),
+        actualMouth: $('#actual-mouth'),
         eyeLeft: $('#eye-left'),
         eyelashLeft: $('#eyelash-left'),
         eyeRight: $('#eye-right'),
@@ -99,6 +100,16 @@ var App = (function ($, undefined) {
         TweenLite.to(objects.hair, speed, {rotation:'-=' + range, transformOrigin: '283px 242px', delay:delay , onComplete:hairWiggle});
     }
 
+    function actualMoutchScale() {
+
+        var tl = new TimelineLite({onComplete:actualMoutchScale});
+
+        tl.add(TweenLite.to(objects.actualMouth, .5,{css:{scale: 0.9}, ease: Linear.easeNone}));
+        tl.add(TweenLite.to(objects.actualMouth, .5,{css:{scale:1}, ease: Linear.easeNone}));
+
+        tl.play();
+    };
+
     function resize() {
         var windowHeight = $(window).height();
         var dudeHeight = objects.head.height() + objects.torso.height();
@@ -114,6 +125,7 @@ var App = (function ($, undefined) {
         headWiggle();
         hairWiggle();
         earsWiggle();
+        actualMoutchScale();
         topTeethMovement();
         sideTeethMovement();
         teethSparkle(objects.topTeethSparkle);
