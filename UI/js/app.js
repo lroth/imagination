@@ -40,8 +40,8 @@ var App = (function ($, undefined) {
 
         tl.add(TweenLite.fromTo(
             teeth, .5,
-            {css:{scale:0, opacity:0, rotation: 0}, ease: Linear.easeNone},
-            {css:{scale:.7, opacity:9, rotation: 180}, ease: Linear.easeNone}
+            {css:{scale:0, opacity:.0, rotation: 0}, ease: Linear.easeNone},
+            {css:{scale:.7, opacity:.8, rotation: 180}, ease: Linear.easeNone}
         ));
 
         tl.add(TweenLite.to(
