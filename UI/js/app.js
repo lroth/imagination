@@ -104,8 +104,8 @@ var App = (function ($, undefined) {
 
         var tl = new TimelineLite({onComplete:actualMoutchScale});
 
-        tl.add(TweenLite.to(objects.actualMouth, .5,{css:{scale: 0.9}, ease: Linear.easeNone}));
         tl.add(TweenLite.to(objects.actualMouth, .5,{css:{scale:1}, ease: Linear.easeNone}));
+        tl.add(TweenLite.to(objects.actualMouth, .5,{css:{scale: 0.9}, ease: Linear.easeNone}));
 
         tl.play();
     };
