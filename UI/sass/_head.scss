@@ -69,6 +69,16 @@
     margin-left: 133px;
 }
 
+#top-neck {
+    width: 99px;
+    height: 48px;
+    background-image: url('../images/top-neck.png');
+    position: absolute;
+    z-index: 8;
+    margin-top: 705px;
+    margin-left: 289px;
+}
+
 #actual-mouth {
     @include gpu();
     width: 287px;
