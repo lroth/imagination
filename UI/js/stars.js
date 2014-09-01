@@ -71,7 +71,7 @@ App.stars = (function ($, undefined) {
     }
 
     function fill() {
-        for(var i = 0; i < 400; i++) {
+        for(var i = 0; i < 300; i++) {
             options.pxs[i] = new Circle();
             options.pxs[i].reset();
         }
