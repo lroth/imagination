@@ -79,6 +79,7 @@
         display: none;
     }
     .clock-face-hour {
+        @include gpu();
         border-radius: 0;
         margin: -57px 0 -57px -246px;
         padding: 57px 0 57px 246px;
@@ -87,6 +88,7 @@
         background-repeat: no-repeat;
     }
     .clock-face-minute {
+        @include gpu();
         border-radius: 0;
         margin: -332px -88px 0;
         padding: 332px 88px 0;
@@ -107,6 +109,7 @@
     margin-top: 489px;
     margin-left: 412px;
     .sparkle {
+        @include gpu();
         margin-top: 57px;
         margin-left: -3px;
     }
@@ -120,6 +123,7 @@
     margin-top: 264px;
 
     #eyebrow-left {
+        @include gpu();
         width: 194px;
         height: 140px;
         background-image: url('../images/eyebrow-left.png');
@@ -131,6 +135,7 @@
     }
 
     #eyelash-left {
+        @include gpu();
         width: 122px;
         height: 125px;
         position: absolute;
@@ -138,6 +143,7 @@
     }
 
     #eyeball-left {
+        @include gpu();
         width: 122px;
         height: 125px;
         background-image: url('../images/eyeball-left.png');
@@ -155,6 +161,7 @@
     margin-top: 205px;
 
     #eyebrow-right {
+        @include gpu();
         width: 100px;
         height: 143px;
         background-image: url('../images/eyebrow-right.png');
@@ -166,6 +173,7 @@
     }
 
     #eyeball-right {
+        @include gpu();
         width: 137px;
         height: 140px;
         background-image: url('../images/eyeball-right.png');
