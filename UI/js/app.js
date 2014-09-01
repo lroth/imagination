@@ -18,7 +18,10 @@ var App = (function ($, undefined) {
         ears: $('#ears'),
         sideTeeth: $('#side-teeth'),
         sideTeethSparkle: $('#side-teeth-sparkle'),
-        torso: $('#torso')
+        torso: $('#torso'),
+        zipperLeft: $('#zipper-left'),
+        zipperRight: $('#zipper-right'),
+        zipperTeeth: $('#zipper-teeth')
     };
 
     function getRandomInt(min, max) {
@@ -110,6 +113,33 @@ var App = (function ($, undefined) {
         tl.play();
     };
 
+    function zipperLeft() {
+        var tl = new TimelineLite({onComplete:zipperLeft});
+
+        tl.add(TweenLite.to(objects.zipperLeft, .5,{rotation: '-=0.15rad', ease: Linear.easeNone}));
+        tl.add(TweenLite.to(objects.zipperLeft, .5,{rotation: '0', ease: Linear.easeNone}));
+
+        tl.play();
+    }
+
+    function zipperRight() {
+        var tl = new TimelineLite({onComplete:zipperRight});
+
+        tl.add(TweenLite.to(objects.zipperRight, .5,{rotation: '+=0.15rad', ease: Linear.easeNone}));
+        tl.add(TweenLite.to(objects.zipperRight, .5,{rotation: '0', ease: Linear.easeNone}));
+
+        tl.play();
+    }
+
+    function zipperTeeth() {
+        var tl = new TimelineLite({onComplete:zipperTeeth});
+
+        tl.add(TweenLite.to(objects.zipperTeeth, .5,{css: {width: '-=50px'}, ease: Linear.easeNone}));
+        tl.add(TweenLite.to(objects.zipperTeeth, .5,{css: {width: '+=50px'}, ease: Linear.easeNone}));
+
+        tl.play();
+    }
+
     function resize() {
         var windowHeight = $(window).height();
         var dudeHeight = objects.head.height() + objects.torso.height();
@@ -142,6 +172,9 @@ var App = (function ($, undefined) {
 
             this.eyelash.init();
             animate();
+            zipperLeft();
+            zipperRight();
+            zipperTeeth();
         },
     };
 
