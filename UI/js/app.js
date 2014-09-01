@@ -125,8 +125,8 @@ var App = (function ($, undefined) {
     function zipperRight() {
         var tl = new TimelineLite({onComplete:zipperRight});
 
-        tl.add(TweenLite.to(objects.zipperRight, .5,{rotation: '+=0.15rad', ease: Linear.easeNone}));
-        tl.add(TweenLite.to(objects.zipperRight, .5,{rotation: '0', ease: Linear.easeNone}));
+        tl.add(TweenLite.to(objects.zipperRight, .5,{rotation: '+=0.15rad', transformOrigin: '0 -px', ease: Linear.easeNone}));
+        tl.add(TweenLite.to(objects.zipperRight, .5,{rotation: '0', transformOrigin: '0 -5px', ease: Linear.easeNone}));
 
         tl.play();
     }
@@ -134,8 +134,8 @@ var App = (function ($, undefined) {
     function zipperTeeth() {
         var tl = new TimelineLite({onComplete:zipperTeeth});
 
-        tl.add(TweenLite.to(objects.zipperTeeth, .5,{css: {width: '-=50px'}, ease: Linear.easeNone}));
-        tl.add(TweenLite.to(objects.zipperTeeth, .5,{css: {width: '+=50px'}, ease: Linear.easeNone}));
+        tl.add(TweenLite.to(objects.zipperTeeth, .5,{css: {width: '-=60px'}, ease: Linear.easeNone}));
+        tl.add(TweenLite.to(objects.zipperTeeth, .5,{css: {width: '+=60px'}, ease: Linear.easeNone}));
 
         tl.play();
     }
