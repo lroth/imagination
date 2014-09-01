@@ -91,6 +91,18 @@
     margin-left: 190px;
 }
 
+#nose {
+    @include gpu();
+    width: 110px;
+    height: 223px;
+    background-image: url('../images/nose.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 10;
+    margin-top: 327px;
+    margin-left: 250px;
+}
+
 #clock {
     position: absolute;
     z-index: 13;
@@ -145,7 +157,7 @@
 #eye-left {
     @include gpu();
     position: absolute;
-    z-index: 9;
+    z-index: 12;
     margin-left: 176px;
     margin-top: 264px;
 
