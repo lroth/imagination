@@ -60,8 +60,8 @@ App.eyelash = (function ($, undefined) {
 
       var tl = new TimelineLite({onComplete:animate});
 
-      tl.add(TweenLite.to(options, 3, {currentY:options.closedY, delay:1, onUpdate:draw}));
-      tl.add(TweenLite.to(options, 3, {currentY:options.openY, delay:1, onUpdate:draw}));
+      tl.add(TweenLite.to(options, 1, {currentY:options.closedY, delay:1, onUpdate:draw}));
+      tl.add(TweenLite.to(options, 1, {currentY:options.openY, delay:1, onUpdate:draw}));
 
       tl.play();
 
