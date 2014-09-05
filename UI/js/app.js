@@ -155,7 +155,7 @@ var App = (function ($, undefined) {
         headWiggle();
         hairWiggle();
         earsWiggle();
-        actualMouthScale();
+        //actualMouthScale();
         topTeethMovement();
         sideTeethMovement();
         teethSparkle(objects.topTeethSparkle);
