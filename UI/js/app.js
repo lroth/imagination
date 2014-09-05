@@ -21,7 +21,8 @@ var App = (function ($) {
         torso: $('#torso'),
         zipperLeft: $('#zipper-left'),
         zipperRight: $('#zipper-right'),
-        zipperTeeth: $('#zipper-teeth')
+        zipperTeeth: $('#zipper-teeth'),
+        dog: $('#dog')
     };
 
     function getRandomInt(min, max) {
@@ -97,7 +98,7 @@ var App = (function ($) {
         tl = new TimelineLite({onComplete:headWiggle, delay: delay});
         tl.add(TweenLite.to(objects.head, speed, {rotation:'+=' + range, marginTop:'-=' + bounce + 'px', transformOrigin: '350px 730px'}));
         tl.add(TweenLite.to(objects.head, speed, {rotation:'-=' + range, marginTop:'+=' + bounce + 'px', transformOrigin: '350px 730px'}));
-        
+
         tl.play();
     }
 
@@ -146,6 +147,19 @@ var App = (function ($) {
         tl.play();
     }
 
+    function dogFly()
+    {
+        var tl = new TimelineLite({onComplete:dogFly});
+
+        tl.add(TweenLite.fromTo(
+            objects.dog, 10,
+            {css:{left:'100%'}, ease: Linear.easeNone},
+            {css:{left:'0'}, ease: Linear.easeNone}
+        ));
+
+        tl.play();
+    }
+
     function resize() {
         var windowHeight = $(window).height(),
             dudeHeight = objects.head.height() + objects.torso.height(),
@@ -166,6 +180,7 @@ var App = (function ($) {
         sideTeethMovement();
         teethSparkle(objects.topTeethSparkle);
         teethSparkle(objects.sideTeethSparkle);
+        dogFly();
     }
 
     return {
