@@ -103,9 +103,9 @@ var App = (function ($, undefined) {
         TweenLite.to(objects.hair, speed, {rotation:'-=' + range, transformOrigin: '283px 242px', delay:delay , onComplete:hairWiggle});
     }
 
-    function actualMoutchScale() {
+    function actualMouthScale() {
 
-        var tl = new TimelineLite({onComplete:actualMoutchScale});
+        var tl = new TimelineLite({onComplete:actualMouthScale});
 
         tl.add(TweenLite.to(objects.actualMouth, .5,{css:{scale:1}, ease: Linear.easeNone}));
         tl.add(TweenLite.to(objects.actualMouth, .5,{css:{scale: 0.9}, ease: Linear.easeNone}));
@@ -155,7 +155,7 @@ var App = (function ($, undefined) {
         headWiggle();
         hairWiggle();
         earsWiggle();
-        actualMoutchScale();
+        actualMouthScale();
         topTeethMovement();
         sideTeethMovement();
         teethSparkle(objects.topTeethSparkle);
