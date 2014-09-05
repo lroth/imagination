@@ -17,7 +17,7 @@ App.stars = (function ($, undefined) {
         options.con.clearRect(0, 0, options.width, options.height);
         for(var i = 0; i < options.pxs.length; i++) {
             options.pxs[i].fade();
-            options.pxs[i].move();
+            //options.pxs[i].move();
             options.pxs[i].draw();
         }
     }
