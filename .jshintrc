@@ -1,0 +1,27 @@
+{
+    "strict": true,
+    "boss": true,
+    "curly": true,
+    "eqnull": true,
+    "eqeqeq": true,
+    "undef": true,
+    "expr": true,
+    "immed": true,
+    "noarg": true,
+    "onevar": true,
+    "smarttabs": true,
+    "quotmark": true,
+    "trailing": true,
+    "undef": true,
+    "unused": true,
+    "indent": 4,
+    "globals": {
+        "document": true,
+        "window": true,
+        "console": true,
+        "TweenLite": true,
+        "TimelineLite": true,
+        "Linear": true,
+        "jQuery": true
+    }
+}
