@@ -1,6 +1,6 @@
-
-var App = (function ($, undefined) {
-
+/* global TweenLite, TimelineLite, Linear, jQuery */
+var App = (function ($) {
+    'use strict';
     var objects = {
         dude: $('#dude'),
         stars: $('#stars'),
@@ -34,26 +34,27 @@ var App = (function ($, undefined) {
     }
 
     function teethSparkle(teeth) {
+        var delay, tl;
 
-        var delay = getRandomInt(5, 10);
+        delay = getRandomInt(5, 10);
 
-        var tl = new TimelineLite({onComplete:function(){
+        tl = new TimelineLite({onComplete:function(){
             teethSparkle(teeth);
         }, delay: delay});
 
         tl.add(TweenLite.fromTo(
-            teeth, .5,
-            {css:{scale:0, opacity:.0, rotation: 0}, ease: Linear.easeNone},
-            {css:{scale:.7, opacity:.8, rotation: 180}, ease: Linear.easeNone}
+            teeth, 0.5,
+            {css:{scale:0, opacity:0.0, rotation: 0}, ease: Linear.easeNone},
+            {css:{scale:0.7, opacity:0.8, rotation: 180}, ease: Linear.easeNone}
         ));
 
         tl.add(TweenLite.to(
-            teeth, .5,
+            teeth, 0.5,
             {css:{rotation: 360}, ease: Linear.easeNone}
         ));
 
         tl.add(TweenLite.to(
-            teeth, .5,
+            teeth, 0.5,
             {css:{scale:0, opacity:0, rotation: 540}, ease: Linear.easeNone}
         ));
 
@@ -87,37 +88,42 @@ var App = (function ($, undefined) {
     }
 
     function headWiggle() {
-        var range = getRandomInt(1, 5);
-        var speed = getRandomInt(1, 3);
-        var delay = getRandomInt(1, 3);
-        var bounce = getRandomInt(2, 10);
-        TweenLite.to(objects.head, speed, {rotation:'+=' + range, marginTop:'-=' + bounce + 'px', transformOrigin: '350px 730px'});
-        TweenLite.to(objects.head, speed, {rotation:'-=' + range, marginTop:'+=' + bounce + 'px', transformOrigin: '350px 730px', delay:delay , onComplete:headWiggle});
+        var range = getRandomInt(1, 5),
+            speed = getRandomInt(1, 3),
+            delay = getRandomInt(1, 3),
+            bounce = getRandomInt(2, 10),
+            tl;
+
+        tl = new TimelineLite({onComplete:headWiggle, delay: delay});
+        tl.add(TweenLite.to(objects.head, speed, {rotation:'+=' + range, marginTop:'-=' + bounce + 'px', transformOrigin: '350px 730px'}));
+        tl.add(TweenLite.to(objects.head, speed, {rotation:'-=' + range, marginTop:'+=' + bounce + 'px', transformOrigin: '350px 730px'}));
+        
+        tl.play();
     }
 
     function hairWiggle() {
-        var range = getRandomInt(1, 5);
-        var speed = getRandomInt(1, 3);
-        var delay = getRandomInt(1, 3);
+        var range = getRandomInt(1, 5),
+            speed = getRandomInt(1, 3),
+            delay = getRandomInt(1, 3);
         TweenLite.to(objects.hair, speed, {rotation:'+=' + range, transformOrigin: '283px 242px'});
         TweenLite.to(objects.hair, speed, {rotation:'-=' + range, transformOrigin: '283px 242px', delay:delay , onComplete:hairWiggle});
     }
 
-    function actualMouthScale() {
-
-        var tl = new TimelineLite({onComplete:actualMouthScale});
-
-        tl.add(TweenLite.to(objects.actualMouth, .5,{css:{scale:1}, ease: Linear.easeNone}));
-        tl.add(TweenLite.to(objects.actualMouth, .5,{css:{scale: 0.9}, ease: Linear.easeNone}));
-
-        tl.play();
-    };
+//    function actualMouthScale() {
+//
+//        var tl = new TimelineLite({onComplete:actualMouthScale});
+//
+//        tl.add(TweenLite.to(objects.actualMouth, .5,{css:{scale:1}, ease: Linear.easeNone}));
+//        tl.add(TweenLite.to(objects.actualMouth, .5,{css:{scale: 0.9}, ease: Linear.easeNone}));
+//
+//        tl.play();
+//    };
 
     function zipperLeft() {
         var tl = new TimelineLite({onComplete:zipperLeft});
 
-        tl.add(TweenLite.to(objects.zipperLeft, .5,{rotation: '-=0.15rad', ease: Linear.easeNone}));
-        tl.add(TweenLite.to(objects.zipperLeft, .5,{rotation: '0', ease: Linear.easeNone}));
+        tl.add(TweenLite.to(objects.zipperLeft, 0.5,{rotation: '-=0.15rad', ease: Linear.easeNone}));
+        tl.add(TweenLite.to(objects.zipperLeft, 0.5,{rotation: '0', ease: Linear.easeNone}));
 
         tl.play();
     }
@@ -125,8 +131,8 @@ var App = (function ($, undefined) {
     function zipperRight() {
         var tl = new TimelineLite({onComplete:zipperRight});
 
-        tl.add(TweenLite.to(objects.zipperRight, .5,{rotation: '+=0.15rad', transformOrigin: '0 -px', ease: Linear.easeNone}));
-        tl.add(TweenLite.to(objects.zipperRight, .5,{rotation: '0', transformOrigin: '0 -5px', ease: Linear.easeNone}));
+        tl.add(TweenLite.to(objects.zipperRight, 0.5,{rotation: '+=0.15rad', transformOrigin: '0 -px', ease: Linear.easeNone}));
+        tl.add(TweenLite.to(objects.zipperRight, 0.5,{rotation: '0', transformOrigin: '0 -5px', ease: Linear.easeNone}));
 
         tl.play();
     }
@@ -134,16 +140,16 @@ var App = (function ($, undefined) {
     function zipperTeeth() {
         var tl = new TimelineLite({onComplete:zipperTeeth});
 
-        tl.add(TweenLite.to(objects.zipperTeeth, .5,{css: {width: '-=60px'}, ease: Linear.easeNone}));
-        tl.add(TweenLite.to(objects.zipperTeeth, .5,{css: {width: '+=60px'}, ease: Linear.easeNone}));
+        tl.add(TweenLite.to(objects.zipperTeeth, 0.5,{css: {width: '-=60px'}, ease: Linear.easeNone}));
+        tl.add(TweenLite.to(objects.zipperTeeth, 0.5,{css: {width: '+=60px'}, ease: Linear.easeNone}));
 
         tl.play();
     }
 
     function resize() {
-        var windowHeight = $(window).height();
-        var dudeHeight = objects.head.height() + objects.torso.height();
-        var scale = windowHeight / dudeHeight;
+        var windowHeight = $(window).height(),
+            dudeHeight = objects.head.height() + objects.torso.height(),
+            scale = windowHeight / dudeHeight;
         objects.headWrapper.css({transform: 'scale('+scale+')'});
         objects.torso.css({transform: 'scale('+scale+')'});
     }
