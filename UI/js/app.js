@@ -22,7 +22,11 @@ var App = (function ($) {
         zipperLeft: $('#zipper-left'),
         zipperRight: $('#zipper-right'),
         zipperTeeth: $('#zipper-teeth'),
-        dog: $('#dog')
+        dog: $('#dog'),
+        dogHead: $('#dog-head'),
+        dogTail: $('#dog-tail'),
+        dogLegFront: $('#dog-leg-front'),
+        dogLegBack: $('#dog-leg-back')
     };
 
     function getRandomInt(min, max) {
@@ -147,14 +151,33 @@ var App = (function ($) {
         tl.play();
     }
 
+    function dogMove(limb, from, to) {
+        var tl = new TimelineLite({onComplete:function(){
+            dogMove(limb, from, to);
+        }});
+
+        tl.add(TweenLite.to(limb, 0.5,{rotation: from, ease: Linear.easeNone}));
+        tl.add(TweenLite.to(limb, 0.5,{rotation: to, ease: Linear.easeNone}));
+
+        tl.play();
+    }
+
+    function dogRun() {
+        dogMove(objects.dogHead, -25, 5);
+        dogMove(objects.dogTail, 20, 0);
+        dogMove(objects.dogLegFront, 0, -40);
+        dogMove(objects.dogLegBack, 0, 40);
+
+    }
+
     function dogFly()
     {
         var tl = new TimelineLite({onComplete:dogFly});
 
         tl.add(TweenLite.fromTo(
-            objects.dog, 10,
+            objects.dog, 15,
             {css:{left:'100%'}, ease: Linear.easeNone},
-            {css:{left:'0'}, ease: Linear.easeNone}
+            {css:{left:'-200px'}, ease: Linear.easeNone}
         ));
 
         tl.play();
@@ -181,6 +204,7 @@ var App = (function ($) {
         teethSparkle(objects.topTeethSparkle);
         teethSparkle(objects.sideTeethSparkle);
         dogFly();
+        dogRun();
     }
 
     return {
@@ -196,7 +220,7 @@ var App = (function ($) {
             zipperLeft();
             zipperRight();
             zipperTeeth();
-        },
+        }
     };
 
 }(jQuery));
