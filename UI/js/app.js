@@ -15,6 +15,7 @@ var App = (function ($) {
         eyeRight: $('#eye-right'),
         eyeballLeft: $('#eyeball-left'),
         eyeballRight: $('#eyeball-right'),
+        eyeDip: $('#eyedip-right'),
         ears: $('#ears'),
         sideTeeth: $('#side-teeth'),
         sideTeethSparkle: $('#side-teeth-sparkle'),
@@ -22,11 +23,13 @@ var App = (function ($) {
         zipperLeft: $('#zipper-left'),
         zipperRight: $('#zipper-right'),
         zipperTeeth: $('#zipper-teeth'),
+        zipperMouth: $('#zipper-mouth'),
         dog: $('#dog'),
         dogHead: $('#dog-head'),
         dogTail: $('#dog-tail'),
         dogLegFront: $('#dog-leg-front'),
-        dogLegBack: $('#dog-leg-back')
+        dogLegBack: $('#dog-leg-back'),
+        dino: $('#dino')
     };
 
     function getRandomInt(min, max) {
@@ -183,6 +186,43 @@ var App = (function ($) {
         tl.play();
     }
 
+    function multiframeAnimation(container, duration, delay) {
+        var frames = container.find('img'),
+            duration = duration || 0.2, //0.2s each frame
+            delay = delay || 2, //2s delay between animation loop
+            tl = new TimelineMax({repeat:-1, repeatDelay: delay});
+
+        // to be sure
+        TweenLite.set(frames, {visibility:"hidden"});
+
+        // forward
+        for (var i = 0; i < frames.length; i++) {
+            tl.add('frame-' + i).to(frames[i], duration, {visibility:'visible'});
+            tl.to(frames[i], 0, {visibility: 'hidden'});
+        };
+
+        // backward
+        for (var j = frames.length - 1; j >= 0; j--) {
+            tl.add('frame-' + j).to(frames[j], duration, {visibility:'visible'});
+            // show the first frame to prevent flicking
+            if (j > 0) {
+                tl.to(frames[j], 0, {visibility: 'hidden'});
+            };
+        };
+    }
+
+    function dinoRoar() {
+        multiframeAnimation(objects.dino);
+    }
+
+    function eyeDip() {
+        multiframeAnimation(objects.eyeDip, 0.3);
+    }
+
+    function zipperMouth() {
+        multiframeAnimation(objects.zipperMouth);
+    }
+
     function resize() {
         var windowHeight = $(window).height(),
             dudeHeight = objects.head.height() + objects.torso.height(),
@@ -205,6 +245,9 @@ var App = (function ($) {
         teethSparkle(objects.sideTeethSparkle);
         dogFly();
         dogRun();
+        dinoRoar();
+        eyeDip();
+        zipperMouth();
     }
 
     return {
@@ -217,9 +260,9 @@ var App = (function ($) {
 
             this.eyelash.init();
             animate();
-            zipperLeft();
-            zipperRight();
-            zipperTeeth();
+            // zipperLeft();
+            // zipperRight();
+            // zipperTeeth();
         }
     };
 
