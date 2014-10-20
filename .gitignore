@@ -3,3 +3,7 @@ node_modules
 UI/.sass-cache
 UI/css
 .DS_Store
+parts/*/vendor
+parts/*/node_modules
+parts/*/UI/.sass-cache
+parts/*/UI/css

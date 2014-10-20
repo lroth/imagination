@@ -1,0 +1,33 @@
+
+#torso {
+    @include gpu();
+    // @include bg-full('../images/torso.png');
+    @include transform-origin(50%, 100%);
+    position: absolute;
+    left: 50%;
+    margin-left: -303px;
+    width: 606px;
+    height: 329px;
+    z-index: 2;
+    bottom: 0;
+}
+
+#dino {
+    @include gpu();
+    width: 57px;
+    height: 50px;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 6;
+    bottom: 5px;
+    right: 125px;
+}
+
+.multiframeAnimation {
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        visibility:hidden;
+    }
+}

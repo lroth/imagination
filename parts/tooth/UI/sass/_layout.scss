@@ -1,0 +1,50 @@
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+#container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+#body {
+    background: #08526b;
+}
+
+#stars {
+    @include absfull();
+    @include fullsize();
+    z-index: 1;
+    display: none;
+}
+
+#dude {
+    @include absfull();
+    @include fullsize();
+    z-index: 2;
+}
+
+#hair,
+#eye-left,
+#eye-right,
+#eye-left-below,
+#eyedip-right,
+#nose,
+#torso,
+#zipper-mouth,
+// #side-teeth,
+// #top-teeth,
+#actual-mouth,
+#top-neck,
+#main-face,
+#ears,
+#clock,
+#dog {
+    display: none;
+}

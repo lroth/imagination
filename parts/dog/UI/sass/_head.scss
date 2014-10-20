@@ -1,0 +1,292 @@
+
+#head-wrapper {
+    @include transform-origin(50%, 0%);
+    margin-top: 15px;
+    position: absolute;
+    left: 50%;
+    z-index: 100;
+}
+
+#head {
+    @include gpu();
+    left: 50%;
+    margin-left: -325px;
+    width: 560px;
+    height: 800px;
+    position: absolute;
+    z-index: 3;
+}
+
+#hair {
+    @include gpu();
+    width: 540px;
+    height: 410px;
+    background-image: url('../images/hair.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 4;
+    margin-top: 4px;
+    margin-left: 14px;
+}
+
+#top-teeth {
+    @include gpu();
+    width: 227px;
+    height: 269px;
+    background-image: url('../images/top-teeth.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 5;
+    margin-top: 73px;
+    margin-left: 243px;
+    .sparkle {
+        margin-top: -54px;
+        margin-left: 49px;
+    }
+}
+
+#ears {
+    @include gpu();
+    width: 534px;
+    height: 225px;
+    background-image: url('../images/ears.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 6;
+    margin-top: 328px;
+    margin-left: 1px;
+}
+
+#main-face {
+    @include gpu();
+    width: 366px;
+    height: 534px;
+    background-image: url('../images/main-face.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 7;
+    margin-top: 265px;
+    margin-left: 133px;
+}
+
+#top-neck {
+    width: 99px;
+    height: 48px;
+    background-image: url('../images/top-neck.png');
+    position: absolute;
+    z-index: 8;
+    margin-top: 705px;
+    margin-left: 289px;
+}
+
+#actual-mouth {
+    @include gpu();
+    width: 287px;
+    height: 175px;
+    background-image: url('../images/actual-mouth.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 8;
+    margin-top: 490px;
+    margin-left: 190px;
+}
+
+#nose {
+    @include gpu();
+    width: 110px;
+    height: 223px;
+    background-image: url('../images/nose.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 10;
+    margin-top: 327px;
+    margin-left: 250px;
+}
+
+#clock {
+    position: absolute;
+    z-index: 13;
+    width: 500px;
+    height: 500px;
+    margin-top: 275px;
+    margin-left: 70px;
+    border: none;
+    .clock-face-container:after,
+    .clock-face-second {
+        display: none;
+    }
+    .clock-face-hour {
+        @include gpu();
+        z-index: 15;
+        border-radius: 0;
+        margin: -57px 0 -57px -246px;
+        padding: 57px 0 57px 246px;
+        background-color: transparent;
+        background-image: url('../images/hours.png');
+        background-repeat: no-repeat;
+    }
+    .clock-face-minute {
+        @include gpu();
+        z-index: 14;
+        border-radius: 0;
+        margin: -332px -88px 0;
+        padding: 332px 88px 0;
+        background-color: transparent;
+        background-image: url('../images/minutes.png');
+        background-repeat: no-repeat;
+    }
+}
+
+#side-teeth {
+    @include gpu();
+    width: 111px;
+    height: 261px;
+    background-image: url('../images/side-teeth.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 8;
+    margin-top: 489px;
+    margin-left: 412px;
+    .sparkle {
+        @include gpu();
+        margin-top: 57px;
+        margin-left: -3px;
+    }
+}
+
+#eye-left {
+    @include gpu();
+    position: absolute;
+    z-index: 12;
+    margin-left: 176px;
+    margin-top: 264px;
+
+    #eyebrow-left {
+        @include gpu();
+        width: 194px;
+        height: 140px;
+        background-image: url('../images/eyebrow-left.png');
+        background-repeat: no-repeat;
+        position: absolute;
+        z-index: 12;
+        margin-top: -86px;
+        margin-left: -56px;
+    }
+
+    #eyelash-left {
+        @include gpu();
+        width: 122px;
+        height: 125px;
+        position: absolute;
+        z-index: 11;
+    }
+
+    #eyeball-left {
+        @include gpu();
+        width: 122px;
+        height: 125px;
+        background-image: url('../images/eyeball-left.png');
+        background-repeat: no-repeat;
+        position: absolute;
+        z-index: 10;
+    }
+}
+
+#eye-left-below {
+    @include gpu();
+    width: 104px;
+    height: 147px;
+    background-image: url('../images/eye-left-below.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 9;
+    margin-left: 177px;
+    margin-top: 355px;
+}
+
+#eye-right {
+    @include gpu();
+    position: absolute;
+    z-index: 9;
+    margin-left: 345px;
+    margin-top: 205px;
+
+    #eyebrow-right {
+        @include gpu();
+        width: 100px;
+        height: 143px;
+        background-image: url('../images/eyebrow-right.png');
+        background-repeat: no-repeat;
+        position: absolute;
+        z-index: 11;
+        margin-top: -79px;
+        margin-left: 45px;
+    }
+
+    #eyeball-right {
+        @include gpu();
+        width: 137px;
+        height: 140px;
+        background-image: url('../images/eyeball-right.png');
+        background-repeat: no-repeat;
+        position: absolute;
+        z-index: 10;
+    }
+}
+
+#eyedip-right {
+    @include gpu();
+    position: absolute;
+    z-index: 8;
+    margin-top: 223px;
+    margin-left: 316px;
+    width: 175px;
+    height: 265px;
+}
+
+#zipper-mouth {
+    position: absolute;
+    z-index: 8;
+    width: 114px;
+    height: 217px;
+    margin-top: 543px;
+    margin-left: 305px;
+    @include rotate(-0.15rad);
+    #zipper-left {
+        @include gpu();
+        position: absolute;
+        z-index: 10;
+        width: 85px;
+        height: 212px;
+        margin-left: -5px;
+        margin-top: -38px;
+        @include transform-origin(66px, 15px);
+        background-image: url('../images/zipper-left.png');
+        background-repeat: no-repeat;
+    }
+    #zipper-right {
+        @include gpu();
+        position: absolute;
+        z-index: 11;
+        width: 110px;
+        height: 195px;
+        margin-top: -26px;
+        margin-left: 57px;
+        @include transform-origin(0, 0);
+        background-image: url('../images/zipper-right.png');
+        background-repeat: no-repeat;
+    }
+    #zipper-teeth {
+        @include gpu();
+        position: absolute;
+        z-index: 9;
+        background-image: url('../images/zipper-teeth.png');
+        background-repeat: no-repeat;
+        background-position: top center;
+        width: 84px;
+        height: 168px;
+        left: 50%;
+        // margin-left: -17px;
+        @include translateX(-50%);
+    }
+}

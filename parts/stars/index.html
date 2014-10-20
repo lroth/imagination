@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="UI/css/screen.css">
+        <link rel="stylesheet" href="vendor/clock-face/clock-face.css">
+    </head>
+    <body id="body">
+        <div id="container">
+            <div id="dog">
+                <div id="dog-head"></div>
+                <div id="dog-torso"></div>
+                <div id="dog-tail"></div>
+                <div id="dog-leg-front"></div>
+                <div id="dog-leg-back"></div>
+            </div>
+            <canvas id="stars"></canvas>
+            <section id="dude">
+                <section id="head-wrapper">
+                    <div id="head">
+                        <div id="hair"></div>
+                        <div id="eye-left">
+                            <div id="eyebrow-left"></div>
+                            <canvas id="eyelash-left"></canvas>
+                            <div id="eyeball-left"></div>
+                        </div>
+                        <div id="eye-left-below"></div>
+                        <div id="eye-right">
+                            <div id="eyebrow-right"></div>
+                            <div id="eyeball-right"></div>
+                        </div>
+                        <div id="eyedip-right" class="multiframeAnimation">
+                            <img src="UI/images/dip-1.png"/>
+                            <img src="UI/images/dip-2.png"/>
+                            <img src="UI/images/dip-3.png"/>
+                            <img src="UI/images/dip-4.png"/>
+                        </div>
+                        <div id="nose"></div>
+                        <!-- <clock-face id="clock"></clock-face> -->
+                        <div id="clock">
+                            <div class="clock-face-container">
+                                <div class="clock-face-hour"></div>
+                                <div class="clock-face-minute"></div>
+                                <div class="clock-face-second"></div>
+                            </div>
+                        </div>
+                        <div id="actual-mouth"></div>
+                        <div id="top-neck"></div>
+                        <div id="main-face"></div>
+                        <div id="ears"></div>
+                        <div id="top-teeth">
+                            <div id="top-teeth-sparkle" class="sparkle"></div>
+                        </div>
+                        <div id="side-teeth">
+                            <div id="side-teeth-sparkle" class="sparkle"></div>
+                        </div>
+                        <div id="zipper-mouth" class="multiframeAnimation">
+                            <img src="UI/images/zip-1.png"/>
+                            <img src="UI/images/zip-2.png"/>
+                            <img src="UI/images/zip-3.png"/>
+                            <img src="UI/images/zip-4.png"/>
+                        </div>
+                    </div>
+                </section>
+                <section id="torso">
+                    <div id="dino" class="multiframeAnimation">
+                        <img src="UI/images/dino-1.png"/>
+                        <img src="UI/images/dino-2.png"/>
+                        <img src="UI/images/dino-3.png"/>
+                    </div>
+                </section>
+            </section>
+        </div>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="vendor/jquery/jquery.min.js"><\/script>')</script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.13.2/TweenMax.min.js"></script>
+        <!-- <script>window.jQuery || document.write('<script src="vendor/jquery/jquery.min.js"><\/script>')</script> -->
+        <script src="vendor/clock-face/clock-face.js"></script>
+        <script src="UI/js/rAF.js"></script>
+        <script src="UI/js/app.js"></script>
+        <script src="UI/js/stars.js"></script>
+        <script src="UI/js/eyelash.js"></script>
+        <script>
+            //App initialize
+            jQuery(document).ready(function(){
+                App.init();
+            });
+        </script>
+   </body>
+</html>

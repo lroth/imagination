@@ -1,0 +1,53 @@
+
+#dog {
+    position: absolute;
+    top: 100px;
+    @include scale(1.8);
+    #dog-head {
+        width: 57px;
+        height: 50px;
+        position: absolute;
+        background-image: url('../images/dog-head.png');
+        background-repeat: no-repeat;
+        transform-origin: 49px 45px;
+    }
+    #dog-leg-front {
+        width: 48px;
+        height: 37px;
+        position: absolute;
+        margin-top: 50px;
+        margin-left: 11px;
+        background-image: url('../images/dog-leg-front.png');
+        background-repeat: no-repeat;
+        transform-origin: 44px 6px;
+    }
+    #dog-leg-back {
+        width: 45px;
+        height: 40px;
+        position: absolute;
+        margin-left: 73px;
+        margin-top: 52px;
+        background-image: url('../images/dog-leg-back.png');
+        background-repeat: no-repeat;
+        transform-origin: 8px 9px;
+    }
+    #dog-torso {
+        width: 37px;
+        height: 27px;
+        position: absolute;
+        margin-top: 36px;
+        margin-left: 47px;
+        background-image: url('../images/dog-torso.png');
+        background-repeat: no-repeat;
+    }
+    #dog-tail {
+        width: 83px;
+        height: 43px;
+        position: absolute;
+        margin-left: 79px;
+        margin-top: 12px;
+        background-image: url('../images/dog-tail.png');
+        background-repeat: no-repeat;
+      transform-origin: 4px 40px;
+    }
+}

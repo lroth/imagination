@@ -1,0 +1,9 @@
+
+.sparkle {
+    position: absolute;
+    z-index: 100;
+    width: 179px;
+    height: 179px;
+    @include bg-full('../images/sparkle.png');
+    // @include scale(0);
+}
